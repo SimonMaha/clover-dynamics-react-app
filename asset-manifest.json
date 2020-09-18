@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/clover-dynamics-react-app/static/css/main.c0e9805a.chunk.css",
+    "main.js": "/clover-dynamics-react-app/static/js/main.9e561e54.chunk.js",
+    "main.js.map": "/clover-dynamics-react-app/static/js/main.9e561e54.chunk.js.map",
+    "runtime-main.js": "/clover-dynamics-react-app/static/js/runtime-main.7c0e7137.js",
+    "runtime-main.js.map": "/clover-dynamics-react-app/static/js/runtime-main.7c0e7137.js.map",
+    "static/js/2.386ff5a0.chunk.js": "/clover-dynamics-react-app/static/js/2.386ff5a0.chunk.js",
+    "static/js/2.386ff5a0.chunk.js.map": "/clover-dynamics-react-app/static/js/2.386ff5a0.chunk.js.map",
+    "index.html": "/clover-dynamics-react-app/index.html",
+    "precache-manifest.2a50f9a20f58ed65644b3abe1d0b9ae7.js": "/clover-dynamics-react-app/precache-manifest.2a50f9a20f58ed65644b3abe1d0b9ae7.js",
+    "service-worker.js": "/clover-dynamics-react-app/service-worker.js",
+    "static/css/main.c0e9805a.chunk.css.map": "/clover-dynamics-react-app/static/css/main.c0e9805a.chunk.css.map",
+    "static/js/2.386ff5a0.chunk.js.LICENSE.txt": "/clover-dynamics-react-app/static/js/2.386ff5a0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c0e7137.js",
+    "static/js/2.386ff5a0.chunk.js",
+    "static/css/main.c0e9805a.chunk.css",
+    "static/js/main.9e561e54.chunk.js"
+  ]
+}
