@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "60e922731ff36384ad243b8acc8d14d7",
+    "revision": "3d6b836975654776b3c01e0b9f5ee8bc",
     "url": "/clover-dynamics-react-app/index.html"
   },
   {
-    "revision": "e9fbd55f87ce7cac753e",
+    "revision": "ec4f049bfbc0d32d53cc",
     "url": "/clover-dynamics-react-app/static/css/main.c0e9805a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/clover-dynamics-react-app/static/js/2.386ff5a0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e9fbd55f87ce7cac753e",
-    "url": "/clover-dynamics-react-app/static/js/main.9e561e54.chunk.js"
+    "revision": "ec4f049bfbc0d32d53cc",
+    "url": "/clover-dynamics-react-app/static/js/main.e05f219f.chunk.js"
   },
   {
     "revision": "4bfffdf7966f098977a2",
