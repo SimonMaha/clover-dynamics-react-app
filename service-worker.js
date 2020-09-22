@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/clover-dynamics-react-app/precache-manifest.ad5c8af8cd87baab1f4c714b06cae085.js"
+  "/clover-dynamics-react-app/precache-manifest.9c8d083434e8619de70a4cb31b7d46d6.js"
 );
 
 self.addEventListener('message', (event) => {
