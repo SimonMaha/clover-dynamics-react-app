@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {Dropdown} from '../components/Dropdown';
-import {CSSTransition} from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group';
 import { ImageList } from '../components/ImageList';
 import { Alert } from '../components/Alert';
+import { TextField } from '@material-ui/core';
 
 const rovers = [
     {
@@ -96,15 +97,14 @@ export const Home = () => {
         setShowAlert(false);
         setShowRover(false);
         setRoverValue(name.toLowerCase());
-        console.log(roverValue);
     }
 
     const submitCameraHandler = (event, name) => {
         event.preventDefault();
         setShowAlert(false);
         setShowCamera(false);
+        console.log("Camera",name);
         setCameraValue(cameras.find(element => element.name === name).abbreviation);
-        console.log(cameraValue);
     }
 
     const apiRequest = event => {
@@ -113,18 +113,18 @@ export const Home = () => {
         .then(res => res.json())
         .then((data) => {
             if (data.photos.length === 0) {
-                setNoMore(true);
                 setShowAlert(true);
                 setAlertText("Nothing to show. Try to choose another camera or sol.");
             }else {
                 setImgList(data.photos);
                 if (data.photos.length > 0) {
-                    setImgList(imgList.concat(data.photos))
+                    setImgList(imgList.concat(data.photos));
+                    setNoMore(false);
                 }
                 if (data.photos.length < 25){
                     setNoMore(true);
                 }
-                setPage(page + 1);
+                setPage(prev => prev + 1);
             }
         })
         .catch(() => {
@@ -137,12 +137,9 @@ export const Home = () => {
     const submitSolHandler = event => {
         event.preventDefault();
         setShowSol(false);
-        setNoMore(false);
         apiRequest(event);
         console.log("Sol:", solValue);
     }
-
-
 
     return (
         <div className="container-fluid">
@@ -156,12 +153,12 @@ export const Home = () => {
             <div className="row">
                 <div className="col">
                     <CSSTransition
-                    in={showRover}
-                    timeout={300}
-                    classNames="node"
-                    unmountOnExit
-                    onEnter={() => setShowCamera(false)}
-                    onExited={() => setShowCamera(true)}
+                        in={showRover}
+                        timeout={300}
+                        classNames="node"
+                        unmountOnExit
+                        onEnter={() => setShowCamera(false)}
+                        onExited={() => setShowCamera(true)}
                     >
                         <Dropdown items={rovers} title={"rover"} showNext={submitRoverHandler}/>
                     </CSSTransition>
@@ -185,25 +182,16 @@ export const Home = () => {
                     >
                         <form className="container-fluid" onSubmit={submitSolHandler}>
                             <div className="row">
-                                <div className="col text-center">
-                                    <label>
-                                        Choose sol:
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="row">
                                 <div className="col-lg-3 col-md-1"></div>
-                                <div className="col-lg-6 col-md-10 col-sm-12 text-center input-group mb-3">
-                                    <input type="number" 
-                                        className="form-control" 
-                                        placeholder="Enter sol..." 
-                                        aria-label="Recipient's username" 
-                                        aria-describedby="button-addon2"
+                                <div className="col-lg-6 col-md-10 col-sm-12 text-center">
+                                    <TextField
+                                        className="drop-list"
+                                        id="standard-textarea"
+                                        label="Choose sol"
                                         value={solValue}
-                                        onChange={e => setSolValue(e.target.value)} />
-                                    <div className="input-group-append">
-                                        <button className="btn btn-outline-primary" type="submit" id="button-addon2">Submit</button>
-                                    </div>
+                                        onChange={e => setSolValue(e.target.value)}
+                                        inputProps={{ type: 'number'}}
+                                    />
                                 </div>
                                 <div className="col-lg-3 col-md-1"></div>
                             </div>
